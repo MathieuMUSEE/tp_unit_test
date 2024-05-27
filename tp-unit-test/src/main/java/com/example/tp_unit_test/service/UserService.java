@@ -23,6 +23,10 @@ public class UserService {
         return userRepository.findById(id);
     }
 
+    public User createUser(Long id, User user){
+        return userRepository.save(user);
+    }
+
     public User saveUser(User user) {
         if (!user.getEmail().contains("@")) {
             throw new DataClownException("Wrong email format");
